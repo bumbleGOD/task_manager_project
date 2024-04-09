@@ -1,0 +1,81 @@
+body{
+    background-image: url(../../images/background-web.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.container{
+    border-radius: 20px;
+}
+
+.span-register{
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border-bottom: 3px solid black;
+    position: relative;
+    left: 50%;
+    transform: translateX(-100%);
+}
+
+.span-login{
+   font-size: 40px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.content .span-login{
+    display: flex;
+    justify-content: center;
+}
+
+.span-back{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.register-form-send{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.span-account{
+    font-size: 17px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.login-form{
+    border-radius: 20px;
+}
+
+@media (max-width: 768px){
+    .back-text{
+        display: none;
+    }
+    .login-form{
+        width: 75%;
+    }
+}
+
+.login-send{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
