@@ -31,3 +31,29 @@ document.addEventListener("DOMContentLoaded", ()=>{
     });
 });// esto es para la sidebar y la nav horizontal
 
+let cajaActiva = null;
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Mostrar el contenido inicial al cargar la página
+    mostrar('inicio');
+});
+
+function mostrar(id) {
+    if (cajaActiva) {
+        cajaActiva.style.display = 'none';
+        const linkActivo = document.querySelector('.navegacion-focus');
+        if (linkActivo) {
+            linkActivo.classList.remove('navegacion-focus');
+        }
+    }
+
+    const mostrarCaja = document.getElementById(id);
+    const link = document.querySelector(`a[href="#"][onclick="mostrar('${id}')"]`);
+    if (mostrarCaja && link) {
+        mostrarCaja.style.display = 'block';
+        cajaActiva = mostrarCaja;
+        link.classList.add('navegacion-focus');
+    }
+}
+
+

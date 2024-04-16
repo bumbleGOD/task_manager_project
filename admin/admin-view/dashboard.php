@@ -30,19 +30,19 @@ if (!isset($_SESSION['taskManager-admin'])) {
     <div class="barra-lateral">
         <div class="logo">
             <i id="menu-desplegable" class="fa-solid fa-bars"></i>
-            <span>TaskManager</span>
+            <span><a href="" class="nav-link " onclick="mostrar('inicio')">TaskManager</a></span>
         </div>
         <div class="navegacion">
             <hr>
             <ul>
                 <li>
-                    <a href="#" onclick="mostrar('usuarios')">
+                    <a href="#" onclick="mostrar('usuarios')" class="">
                         <i class=" fa-solid fa-user"></i>
                         <span>Usuarios</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" onclick="mostrar('tareas')">
+                    <a href="#" onclick="mostrar('tareas')" class="">
                         <i class="fa-solid fa-list-check"></i>
                         <span>Tareas</span>
                     </a>
@@ -82,7 +82,7 @@ if (!isset($_SESSION['taskManager-admin'])) {
         <div class="sesion">
             <i class="fa-solid fa-user-tie"></i>
             <span>
-                <div class="admin-text" title="<?= $_SESSION['taskManager-admin'] ?>"><?= substr($_SESSION['taskManager-admin'], 0, 8,) . "..." ?>/<a href="">Logout</a></div>
+                <div class="admin-text" title="<?= $_SESSION['taskManager-admin'] ?>"><?= substr($_SESSION['taskManager-admin'], 0, 6,) . "..." ?>/<a href="../model-admin/admin/logout.php" class="nav-link text-danger">Logout</a></div>
             </span>
         </div>
     </div>
@@ -93,11 +93,19 @@ if (!isset($_SESSION['taskManager-admin'])) {
         </h2>
     </div>
 
+    <section id="inicio">
+        fino
+    </section>
+
     <div id="usuarios">
         holaas
     </div>
     <div id="tareas">
         adioss
+    </div>
+
+    <div class="footer mt-auto">
+        <h4>&copy; 2024-Todos los derechos reservados</h4>
     </div>
 </body>
 
