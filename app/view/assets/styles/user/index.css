@@ -10,11 +10,11 @@
 }
 
 nav{
-
-    box-shadow: 2px 0px 6px;
+    box-shadow: 2px 0px 12px;
     font-size: 20px;
     display: flex;
     align-items: center;
+    height: 100%;
 }
 
 .nav-link{
@@ -23,6 +23,7 @@ nav{
     border-bottom: 2px solid transparent;
     transition: border-bottom-color 0.3s ease;
 }
+
 
 .nav-link:hover{
     border-bottom-color: black;
@@ -34,12 +35,12 @@ nav{
 
 .img-section{
     width: 100%;
-    height: 90.4vh;
+    height: 90.5vh;
 }
 
 @media (min-height: 749px){
     .img-section{
-        height: 92.5vh;
+        height: 92.6vh;
     }
 }
 
@@ -54,6 +55,11 @@ nav{
     height: 100%;
 }
 
+.content-text p h1 h2{
+    width: 100%;
+    height: 100%;
+}
+
 .section-preview{
     position: relative;
 }
@@ -63,4 +69,47 @@ nav{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#text-section{
+    top: -500px;
+    transition: top 1s ease;
+}
+
+@media (max-width: 991px){
+    .text-section{
+        width: 95%;
+        height: 70%;
+    }
+}
+
+.ola {
+    background: linear-gradient(to right, #FFF2E1, white, #FBF8DD);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#Home:target{
+    scroll-margin-top: 80px;
+}
+
+#inicio:target{
+    scroll-margin-top: 71px;
+}
+
+.nav-link.target{
+    scroll-margin-top: 40px;
+}
+
+#img-principal{
+    opacity: 0;
+}
+
+#navbar-show{
+    background-color: #F8F9FA;
+    transition: 2s;
+}
+
+#sobreNosotros:target{
+    scroll-margin-top: 70px;
 }

@@ -1,0 +1,13 @@
+{
+    "php.version": "8.3",
+    "path-intellisense.absolutePathToWorkspace": true,
+    "path-intellisense.showOnAbsoluteSlash": true,
+    "path-intellisense.showHiddenFiles": true,
+    "markdown.preferredMdPathExtensionStyle": "auto",
+    "markdown.suggest.paths.enabled": true,
+    "python.analysis.autoSearchPaths": true,
+    "html-css-class-completion.includeGlobPattern": "**/*.{css,html}",
+    "explorer.openEditors.sortOrder": "editorOrder",
+    "npm-intellisense.packageSubfoldersIntellisense": false,
+    "npm-intellisense.showBuildInLibs": false
+}

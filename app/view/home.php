@@ -1,9 +1,10 @@
 <?php
-session_name("user");
 session_start();
 
-if(!isset($_SESSION["user"])){
-    header("Location: /task_manager_project/public_view/index.php");
+require_once (__DIR__ . "/../model/user/user.php");
+
+if(!isset($_SESSION['taskManager-user'])){
+    header("Location: /task_manager_project/public_html/index.php");
     exit;
 }
 
@@ -17,5 +18,6 @@ if(!isset($_SESSION["user"])){
 </head>
 <body>
     hola
+    <a href="../model/user/logout.php">cerrar sesion</a>
 </body>
 </html>

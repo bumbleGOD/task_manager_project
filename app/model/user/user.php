@@ -3,12 +3,12 @@
 require_once (__DIR__ . "/../../../config/connection/connection.php");
 
 class user extends connectionDB{
-    public function register_user($name, $lastName, $age, $username, $email, $number, $password){
+    public function registerUser($name, $lastName, $age_user, $username, $email, $number, $password){
         $connect = parent::getConnection();
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        
-        $stmt = $connect->prepare("INSERT INTO users(name_user, lastName_user, age_user, username_user, email_user, number_user, password_user) VALUES (?,?,?,?,?,?,?)");
-        $stmt->bind_param("ssissss", $name, $lastName, $age, $username, $email, $number, $password_hash);
+
+        $stmt = $connect->prepare("INSERT into users (name_user, lastName_user, age_user, username_user, email_user, number_user, password_user) values (?,?,?,?,?,?,?)");
+        $stmt->bind_param("ssissss", $name, $lastName, $age_user, $username, $email, $number, $password_hash);
 
         if($stmt->execute()){
             $stmt->close();
@@ -18,31 +18,29 @@ class user extends connectionDB{
             return false;
         }
     }
-    public function login_user($email, $password){
+
+    public function loginUser($email, $password){
         $connect = parent::getConnection();
         $password_select = "";
-        $username = "";
 
         $stmt = $connect->prepare("SELECT * from users where email_user = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
-        $res = $stmt->get_result();
+        $result = $stmt->get_result();
 
-        if(mysqli_num_rows($res) == 1){
-            $row = mysqli_fetch_assoc($res);
+        if(mysqli_num_rows($result) == 1){
+            $row = mysqli_fetch_assoc($result);
             $password_select = $row["password_user"];
             $username = $row["username_user"];
 
             if(password_verify($password, $password_select)){
-                $_SESSION["user"] = $username;
-                $stmt->close();
+                session_start();
+                $_SESSION['taskManager-user'] = $username;
+
                 return true;
             }else{
                 return false;
             }
-        }else{
-            $stmt->close();
-            return false;
         }
     }
 }

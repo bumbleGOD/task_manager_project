@@ -11,6 +11,14 @@ body{
     height: 100vh;
 }
 
+#body-login{
+    opacity: 0;
+}
+
+#body-register{
+    opacity: 0;
+}
+
 .container{
     border-radius: 20px;
 }
@@ -62,6 +70,7 @@ a{
 }
 
 .login-form{
+    border: 1px solid transparent;
     border-radius: 20px;
 }
 

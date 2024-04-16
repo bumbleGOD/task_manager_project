@@ -1,24 +1,44 @@
 $(document).ready(function () {
-  $("#link-inicio").click(function () {
-    $("#link-inicio").addClass("active");
-    $("#link-sobreNosotros").removeClass("active");
-    $("#link-contacto").removeClass("active");
-  });
-  $("#link-sobreNosotros").click(function () {
-    $("#link-sobreNosotros").addClass("active");
-    $("#link-inicio").removeClass("active");
-    $("#link-contacto").removeClass("active");
-  });
-  $("#link-contacto").click(function () {
-    $("#link-contacto").addClass("active");
-    $("#link-inicio").removeClass("active");
-    $("#link-sobreNosotros").removeClass("active");
-  });
-}); // selector nav
+  function actualizarEstado(){
+    const secciones = document.querySelectorAll("section");
+    secciones.forEach(seccion => {
+      const rect = seccion.getBoundingClientRect();
+      if(rect.top <= 75 && rect.bottom >= 10){
+        const id = seccion.getAttribute("id");
+        $(".nav-link").removeClass("active");
+        $(".nav-link[href='#"+id+"']").addClass("active");
+      }
+    });
+  }
 
-document.getElementById("navbar-show-controller").addEventListener("click", function () {
-  const navbarCollapse = document.getElementById("navbar-show");
+  actualizarEstado();
+  $(window).scroll(function () { 
+    actualizarEstado();
+  });
+});//selector nav
 
-  navbarCollapse.classList.toggle("show");
-});
-// nav responsiva
+document.addEventListener("DOMContentLoaded", function () {
+  const navbar = document.getElementById("navbar-show-controller");
+
+  function showNavbar(){
+    const navbarCollapse = document.getElementById("navbar-show");
+    navbarCollapse.classList.toggle("show");
+  }
+
+  navbar.addEventListener("click", showNavbar);
+});//mostrar nav responsiva
+
+window.addEventListener("load", function(){
+    const img = document.getElementById("img-principal");
+
+    img.style.transition = "opacity 1.5s";
+    img.style.opacity = "1";
+});//cargar imagen transitiva (para mejor apariencia)
+
+document.addEventListener("DOMContentLoaded", function () {
+  const box = document.getElementById("text-section");
+
+  setTimeout(function () {
+    box.style.top = "50%";
+  }, 10);
+});//esto es para darle animacion a la caja que hay en el portal de entrada de la pagina
