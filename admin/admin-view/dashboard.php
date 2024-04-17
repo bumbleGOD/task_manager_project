@@ -30,7 +30,14 @@ if (!isset($_SESSION['taskManager-admin'])) {
 <body class="row">
 
     <div class="sidebar col-lg-4 col-xl-3 col-xxl-2 h-100 p-3">
-        <h2 class="d-flex mb-4"><i id="boton-actualizar-tamaño" class="fa-solid fa-bars d-flex justify-content-center"></i><span class="d-flex justify-content-center w-100">TaskManager</span></h2>
+        <h2 class="d-flex mb-4">
+            <i id="boton-actualizar-tamaño" class="fa-solid fa-bars d-flex justify-content-center"></i>
+            <span class="w-100 ps-2">TaskManager</span>
+        </h2>
+        <h2 class="d-flex mb-4">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span class="w-100 ps-2">Dashboard</span>
+        </h2>
         <hr>
         <ul class="nav flex-column">
             <li class="nav-item mt-4">

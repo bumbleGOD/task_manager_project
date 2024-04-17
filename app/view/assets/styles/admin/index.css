@@ -39,14 +39,26 @@ body{
     background-color: var(--background-color-sidebar);
     color: var(--text-color-sidebar);
     overflow: hidden;
+    transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .mini-sidebar{
     width: 5%;
 }
 
+.sidebar span{
+    transition: 0.3s ease;
+}
+
 .hidden{
-    visibility: hidden;
+    display: none;
+    border: 2px solid red;
+}
+
+.main-content-grande{
+    width: 95%;
 }
 
 /* estilos del inicio/menu de la sidebar */
@@ -123,6 +135,7 @@ body{
     position: relative;
     right: 0px;
     height: 100%;
+    transition: width 0.3s ease;
 }
 
 /* estilos del contenido principal */
