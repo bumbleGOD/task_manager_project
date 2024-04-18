@@ -6,6 +6,8 @@
 
     --text-color-nav-elements-hover: rgb(255, 255, 255);
     --background-color-nav-elements-hover: rgb(160, 160, 160);
+    --text-color-nav-elements-focus: rgb(255, 255, 255);
+    --background-color-nav-elements-focus: rgb(160, 160, 160);
 
     --background-color-nav-horizontal: rgb(255, 255, 255);
     --text-color-nav-horizontal: rgb(0, 0, 0);
@@ -33,6 +35,10 @@ body{
     display: flex;
 }
 
+#body{
+    transition: 0.2s ease;
+}
+
 /* estilos de la sidebar (generales) */
 
 .sidebar{
@@ -50,15 +56,28 @@ body{
 
 .sidebar span{
     transition: 0.3s ease;
+    overflow: hidden;
+    opacity: 1;
 }
 
-.hidden{
-    display: none;
-    border: 2px solid red;
+.sidebar h2{
+    position: relative;
+    left: -40%;
+    transition: 0.3s ease;
+}
+
+.sidebar span.hidden, .sidebar a.hidden{
+    opacity: 0;
+    width: 5%;
 }
 
 .main-content-grande{
     width: 95%;
+}
+
+.sidebar ul li a.active{
+    background-color: var(--background-color-nav-elements-focus);
+    color: var(--text-color-nav-elements-focus);
 }
 
 /* estilos del inicio/menu de la sidebar */
@@ -72,6 +91,13 @@ body{
     min-width: 40px;
     font-size: 40px;
     cursor: pointer;
+}
+
+.sidebar h2 a{
+    color: var(--text-color-sidebar);
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.3s ease;
 }
 
 /* estilos de la nav de la sidebar */
@@ -105,7 +131,10 @@ body{
     border-radius: 4px;
 }
 
-
+.sidebar ul li a:focus{
+    background-color: var(--background-color-nav-elements-focus);
+    color: var(--text-color-nav-elements-focus);
+}
 
 
 /* estilos de la nav-horizontal (la parte que da la bienvenida) */
@@ -151,6 +180,9 @@ body{
 .main-content .content-text-main .content-text{
     margin: 0;
     height: auto;
+    border: 2px solid red;
+    width: 100%;
+    display: none;
 }
 
 /* estilos del footer */
