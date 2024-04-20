@@ -12,15 +12,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
         mainContent.classList.toggle("main-content-grande");
     });
 
-});
+}); // esto es para ajustar el tamaño de la sidebar cuando se le de el click ademas de ajustar el tamaño de la main-content (contenido principal)
 
 window.addEventListener("load", ()=>{
-    const h2 = document.querySelectorAll(".sidebar h2");
+    const desplazamientoTexto = document.querySelectorAll(".sidebar h2, .sidebar ul li, .sidebar .modo-oscuro");
 
-    h2.forEach((h2)=>{
-        h2.style.left = "0%";
+    desplazamientoTexto.forEach((span)=>{
+        span.style.left = "0%";
     });
-});
+}); //esto es para estilos cuando se cargue la pagina se vea una animacion de ordenamiento
 
 
 let cajaActual = null;
@@ -38,25 +38,35 @@ function mostrar(id) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const links = document.querySelectorAll(".sidebar ul a");
-
-    links.forEach((link) => {
-        link.addEventListener("click", (event) => {
-            event.preventDefault(); // Evita que el enlace navegue a otra página
-            const id = link.getAttribute("href").substring(1); // Obtiene el ID del enlace
-            
-            // Remueve la clase 'active' de todos los enlaces
-            links.forEach((l) => {
-                l.classList.remove("active");
-            });
-            
-            // Agrega la clase 'active' al enlace clicado
-            link.classList.add("active");
-
-            mostrar(id);
-        });
-    });
-
+document.addEventListener("DOMContentLoaded", ()=>{
     mostrar('dashboard');
-});
+}); // esto es para definir que caja si abre y se cierra cuando se le a un link de la sidebar, ademas que al cargar la pagina por defecto se va a la dashboard(inicio)
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    const navLinks = document.querySelectorAll(".sidebar .nav-link");
+
+    navLinks.forEach((link)=>{
+        link.addEventListener("click", ()=>{
+            navLinks.forEach((quitarFocus)=>{
+                quitarFocus.classList.remove("active");
+            });
+
+            if(!link.href.includes("#dashboard")){
+                link.classList.add("active");
+            }
+        });
+    }); 
+});//esto es para el focus de los elementos a de la nav
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    const darkModeBoton = document.getElementById("dark-mode");
+    const body = document.querySelector("body");
+    const boton = document.getElementById("boton");
+
+    darkModeBoton.addEventListener("click", ()=>{
+        body.classList.toggle("dark-mode");
+        if(body){
+            boton.classList.toggle("on");
+        }
+    });
+});// esto es para el modo oscuro de la dashboard

@@ -35,7 +35,7 @@ if (!isset($_SESSION['taskManager-admin'])) {
             <span class="w-100 ps-2">TaskManager</span>
         </h2>
         <h2 class="d-flex mb-4">
-            <a href="#dashboard" onclick="mostrar('dashboard')">
+            <a href="#dashboard" class="nav-link" onclick="mostrar('dashboard')">
                 <i class="fa-solid fa-gauge-high"></i>
                 <span class="w-100 ps-2">Dashboard</span>
             </a>
@@ -74,8 +74,13 @@ if (!isset($_SESSION['taskManager-admin'])) {
             </li>
         </ul>
         <hr>
-        <div class="modo-oscuro">
-
+        <div class="modo-oscuro d-flex">
+            <span><i class="fa-solid fa-moon"></i> Modo oscuro</span>
+            <div class="contenedor" id="dark-mode">
+                <div class="background">
+                    <div class="boton" id="boton"></div>
+                </div>
+            </div>  
         </div>
     </div>
 
@@ -86,7 +91,6 @@ if (!isset($_SESSION['taskManager-admin'])) {
         <div class="content-text-main col-lg-8 col-xl-9 col-xxl-10">
             <div class="content-text p-4" id="dashboard">
                 hola Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero voluptatum officiis rerum nihil expedita itaque nostrum iusto placeat eius, similique quas eum adipisci, totam qui rem. Aspernatur consequatur sunt sequi vero enim id necessitatibus magnam? Quibusdam eum natus modi distinctio voluptate aliquam, repellendus doloribus deleniti aliquid nobis excepturi qui necessitatibus at dolorum quos optio fugit id amet ipsum illum deserunt! Amet exercitationem, eligendi magnam earum est odio numquam praesentium quia hic dolorem porro a! Provident magni aspernatur reprehenderit, minima quae dolorum perferendis! Quo porro iusto pariatur quibusdam earum voluptas laboriosam mollitia repudiandae reprehenderit atque sunt corrupti laudantium quis distinctio dolores odit ab, impedit, praesentium facere qui dolor error magnam minima eos! Eum cupiditate id voluptatibus. Vel at praesentium placeat necessitatibus unde aut repellat. Consequuntur, voluptates iste veniam blanditiis inventore, neque ipsa mollitia eveniet exercitationem animi, obcaecati sed quia quis ullam laboriosam. Hic amet fugit sed corrupti ipsa minima perspiciatis nobis quod nesciunt optio voluptatum distinctio, placeat provident illo vel nulla dolore quasi. Velit molestiae et nesciunt perspiciatis. Nemo eligendi placeat quod molestiae, ipsum facere autem ipsam repellendus inventore, unde dolorum. Reiciendis sunt harum similique maiores asperiores! Eum labore neque doloribus, provident perferendis dicta. Perferendis ab quod culpa amet, ipsum magni. Facilis alias numquam atque corporis!
-
             </div>
             <div class="content-text p-4" id="usuarios">
                 asdsadLorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt repudiandae aspernatur hic, aut quia veritatis porro ipsa. Voluptas, voluptates! Eveniet quidem temporibus sint? Rerum asperiores possimus dolores voluptas debitis officia.
