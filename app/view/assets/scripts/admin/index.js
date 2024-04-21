@@ -35,11 +35,19 @@ function mostrar(id) {
     if (cajaMostrar) {
         cajaMostrar.style.display = "block";
         cajaActual = cajaMostrar;
+
+        localStorage.setItem('cajaActual', id);
     }
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    mostrar('dashboard');
+    const cajaGuardada = localStorage.getItem('cajaActual');
+
+    if(cajaGuardada){
+        mostrar(cajaGuardada);
+    }else{
+        mostrar('dashboard');
+    }
 }); // esto es para definir que caja si abre y se cierra cuando se le a un link de la sidebar, ademas que al cargar la pagina por defecto se va a la dashboard(inicio)
 
 document.addEventListener("DOMContentLoaded", ()=>{

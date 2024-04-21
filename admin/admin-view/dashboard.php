@@ -2,6 +2,8 @@
 
 session_start();
 
+require_once (__DIR__ . "/../model-admin/crud/classes.php");
+
 if (!isset($_SESSION['taskManager-admin'])) {
     header("Location: /task_manager_project/admin/admin-view/login-admin.php");
     exit;
@@ -80,7 +82,7 @@ if (!isset($_SESSION['taskManager-admin'])) {
                 <div class="background">
                     <div class="boton" id="boton"></div>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
 
@@ -90,22 +92,61 @@ if (!isset($_SESSION['taskManager-admin'])) {
         </div>
         <div class="content-text-main col-lg-8 col-xl-9 col-xxl-10">
             <div class="content-text p-4" id="dashboard">
-                hola Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero voluptatum officiis rerum nihil expedita itaque nostrum iusto placeat eius, similique quas eum adipisci, totam qui rem. Aspernatur consequatur sunt sequi vero enim id necessitatibus magnam? Quibusdam eum natus modi distinctio voluptate aliquam, repellendus doloribus deleniti aliquid nobis excepturi qui necessitatibus at dolorum quos optio fugit id amet ipsum illum deserunt! Amet exercitationem, eligendi magnam earum est odio numquam praesentium quia hic dolorem porro a! Provident magni aspernatur reprehenderit, minima quae dolorum perferendis! Quo porro iusto pariatur quibusdam earum voluptas laboriosam mollitia repudiandae reprehenderit atque sunt corrupti laudantium quis distinctio dolores odit ab, impedit, praesentium facere qui dolor error magnam minima eos! Eum cupiditate id voluptatibus. Vel at praesentium placeat necessitatibus unde aut repellat. Consequuntur, voluptates iste veniam blanditiis inventore, neque ipsa mollitia eveniet exercitationem animi, obcaecati sed quia quis ullam laboriosam. Hic amet fugit sed corrupti ipsa minima perspiciatis nobis quod nesciunt optio voluptatum distinctio, placeat provident illo vel nulla dolore quasi. Velit molestiae et nesciunt perspiciatis. Nemo eligendi placeat quod molestiae, ipsum facere autem ipsam repellendus inventore, unde dolorum. Reiciendis sunt harum similique maiores asperiores! Eum labore neque doloribus, provident perferendis dicta. Perferendis ab quod culpa amet, ipsum magni. Facilis alias numquam atque corporis!
+                <h2><span>Inicio</span></h2>
+                <div class="text">
+                    hola Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero voluptatum officiis rerum nihil expedita itaque nostrum iusto placeat eius, similique quas eum adipisci, totam qui rem. Aspernatur consequatur sunt sequi vero enim id necessitatibus magnam? Quibusdam eum natus modi distinctio voluptate aliquam, repellendus doloribus deleniti aliquid nobis excepturi qui necessitatibus at dolorum quos optio fugit id amet ipsum illum deserunt! Amet exercitationem, eligendi magnam earum est odio numquam praesentium quia hic dolorem porro a! Provident magni aspernatur reprehenderit, minima quae dolorum perferendis! Quo porro iusto pariatur quibusdam earum voluptas laboriosam mollitia repudiandae reprehenderit atque sunt corrupti laudantium quis distinctio dolores odit ab, impedit, praesentium facere qui dolor error magnam minima eos! Eum cupiditate id voluptatibus. Vel at praesentium placeat necessitatibus unde aut repellat. Consequuntur, voluptates iste veniam blanditiis inventore, neque ipsa mollitia eveniet exercitationem animi, obcaecati sed quia quis ullam laboriosam. Hic amet fugit sed corrupti ipsa minima perspiciatis nobis quod nesciunt optio voluptatum distinctio, placeat provident illo vel nulla dolore quasi. Velit molestiae et nesciunt perspiciatis. Nemo eligendi placeat quod molestiae, ipsum facere autem ipsam repellendus inventore, unde dolorum. Reiciendis sunt harum similique maiores asperiores! Eum labore neque doloribus, provident perferendis dicta. Perferendis ab quod culpa amet, ipsum magni. Facilis alias numquam atque corporis!
+                </div>
             </div>
             <div class="content-text p-4" id="usuarios">
-                asdsadLorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt repudiandae aspernatur hic, aut quia veritatis porro ipsa. Voluptas, voluptates! Eveniet quidem temporibus sint? Rerum asperiores possimus dolores voluptas debitis officia.
+                <h2><span>Usuarios</span></h2>
+                <div class="text text-user table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Edad</th>
+                                <th scope="col">Nombre de usuario</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Número</th>
+                                <th scope="col">Contraseña</th>
+                                <th scope="col">Handle</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $read_user = new classes();
+                            $read_user->read_users();
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="content-text p-4" id="tareas">
-                fdgdLorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt repudiandae aspernatur hic, aut quia veritatis porro ipsa. Voluptas, voluptates! Eveniet quidem temporibus sint? Rerum asperiores possimus dolores voluptas debitis officia.
+                <h2><span>Tareas</span></h2>
+                <div class="text">
+                    fdgdLorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt repudiandae aspernatur hic, aut quia veritatis porro ipsa. Voluptas, voluptates! Eveniet quidem temporibus sint? Rerum asperiores possimus dolores voluptas debitis officia.
+                </div>
             </div>
             <div class="content-text p-4" id="estadisticas">
-                eteLorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt repudiandae aspernatur hic, aut quia veritatis porro ipsa. Voluptas, voluptates! Eveniet quidem temporibus sint? Rerum asperiores possimus dolores voluptas debitis officia.
+                <h2><span>Estadisticas</span></h2>
+                <div class="text">
+                    eteLorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt repudiandae aspernatur hic, aut quia veritatis porro ipsa. Voluptas, voluptates! Eveniet quidem temporibus sint? Rerum asperiores possimus dolores voluptas debitis officia.
+                </div>
             </div>
             <div class="content-text p-4" id="perfil">
-                qewqLorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt repudiandae aspernatur hic, aut quia veritatis porro ipsa. Voluptas, voluptates! Eveniet quidem temporibus sint? Rerum asperiores possimus dolores voluptas debitis officia.
+                <h2><span>Perfil</span></h2>
+                <div class="text">
+                    qewqLorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt repudiandae aspernatur hic, aut quia veritatis porro ipsa. Voluptas, voluptates! Eveniet quidem temporibus sint? Rerum asperiores possimus dolores voluptas debitis officia.
+                </div>
             </div>
             <div class="content-text p-4" id="configuracion">
-                ijkhLorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt repudiandae aspernatur hic, aut quia veritatis porro ipsa. Voluptas, voluptates! Eveniet quidem temporibus sint? Rerum asperiores possimus dolores voluptas debitis officia.
+                <h2><span>Configuración</span></h2>
+                <div class="text">
+                    ijkhLorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt repudiandae aspernatur hic, aut quia veritatis porro ipsa. Voluptas, voluptates! Eveniet quidem temporibus sint? Rerum asperiores possimus dolores voluptas debitis officia.
+                </div>
             </div>
         </div>
         <div class="footer">

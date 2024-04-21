@@ -19,6 +19,8 @@
     --text-color-footer: rgb(160, 160, 160);
 
     --background-color-main-content: rgb(224, 224, 224);
+    --background-color-text-content: rgb(255, 255, 255);
+    --text-color-text-content: rgb(0, 0, 0);
 }
 
 .dark-mode{
@@ -42,6 +44,8 @@
     --text-color-footer: rgb(160, 160, 160);
 
     --background-color-main-content: rgb(96, 96, 96);
+    --background-color-text-content: rgb(32, 32, 32);
+    --text-color-text-content: rgb(255, 255, 255);
 }
 
 /* estilos generales de la ventana */
@@ -304,6 +308,32 @@ body{
     width: 100%;
     display: none;
     height: 100%;
+}
+
+.main-content .content-text-main .content-text h2{
+    background-color: var(--background-color-text-content);
+    color: var(--text-color-text-content);
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+}
+
+.main-content .content-text-main .content-text h2 span{
+    border-bottom: 2px solid var(--text-color-text-content);
+    display: flex;
+    align-items: center;
+}
+
+.main-content .content-text-main .content-text .text{
+    padding: 20px;
+    background-color: var(--background-color-text-content);
+    color: var(--text-color-text-content);
+    margin-top: 20px;
+}
+
+.main-content .content-text-main .content-text .text-user table thead th, .main-content .content-text-main .content-text .text-user table tbody td{
+    background-color: var(--background-color-text-content);
+    color: var(--text-color-text-content);
 }
 
 /* estilos del footer */
